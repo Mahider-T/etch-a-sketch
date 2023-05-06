@@ -30,15 +30,15 @@ body.appendChild(buttonContainer);
 
 
 const container = document.createElement('div');
-let containerDimention = 700;//container should not grow or shrink depending on the number of boxes
+let containerDimension = 700;//container should not grow or shrink depending on the number of boxes
 
 container.classList.add('container');
 container.style.display = "flex";
 container.style.flex = "1 1 auto";
 container.style.flexWrap = "wrap";
-container.style.maxHeight = `${containerDimention}px`;
-container.style.maxWidth = `${containerDimention}px`; 
-container.style.minWidth = `${containerDimention}px`;
+container.style.maxHeight = `${containerDimension}px`;
+container.style.maxWidth = `${containerDimension}px`; 
+container.style.minWidth = `${containerDimension}px`;
 
 // changes the background color and border of each div to red when it is hovered over
 //takes a nodelist as a parameter (the result of querySelectorAll() function)
@@ -57,13 +57,13 @@ function drawOnHover(boxes) {
 //The function below draws the pad to be sketched over
 let divs; //a new mini-square box is saved here, updated throughout the loop
 function drawPad(boxPerRow){
-    let boxDimention = containerDimention/boxPerRow;
+    let boxDimension = containerDimension/boxPerRow;
     for (let i = 1; i <= boxPerRow * boxPerRow; i++) {
         divs = document.createElement('div');
         divs.classList.add(`box${i}`); //to give each box different className
         divs.style.boxSizing = "border-box";
-        divs.style.height = `${boxDimention}px`;
-        divs.style.width = `${boxDimention}px`;
+        divs.style.height = `${boxDimension}px`;
+        divs.style.width = `${boxDimension}px`;
         divs.style.border = `solid black 1px`;
         container.appendChild(divs);//each div(box) is appended to the container after each iteration 
     }
